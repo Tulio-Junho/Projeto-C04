@@ -5,8 +5,8 @@
 // Kauã Aparecido Silva Morais       - GES - 756
 // Ana Clara Oliveira e Silva        - GES - 867
 // Túlio César Alves Junho           - GES - 741
+// João Vitor Lima da Silveira       - GES - 500
 // Vitoria Cássia Bernardo Rodrigues - GEC - 2094
-// 
 
 
 #include <iostream> 
