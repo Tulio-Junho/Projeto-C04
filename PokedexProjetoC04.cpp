@@ -8,29 +8,32 @@
 // João Vitor Lima da Silveira       - GES - 500
 // Vitoria Cássia Bernardo Rodrigues - GEC - 2094
 
-
 #include <iostream> 
+#include <locale>
+#include <cstdlib>
 using namespace std;
+
+  
 
 int menu(){                 //Exibe o menu da pokedex
     int decisao = -1;
 
-    cout << "======================================" << endl;
-    cout << "               POKEDEX                " << endl;
-    cout << "======================================" << endl;
-    cout << "# Ola Jovem Treinador! Essa eh a Pokedex, sua maior aliada na sua jornada de se tornar o melhor treinador dos Pokemons!" << endl;
+    cout << "  ====================================================================================================================" << endl;
+    cout << "                                                     POKEDEX                " << endl;
+    cout << "  ====================================================================================================================" << endl;
+    cout << "\n# Olá, Jovem Treinador! Essa é a Pokédex, sua maior aliada em sua jornada de se tornar o melhor treinador dos Pokémons!" << endl;
     cout << endl;
-    cout << "Faca sua escolha: " << endl;
+    cout << "Faça sua escolha: " << endl;
     cout << endl;
     cout << "[1] Cadastrar Cidade. " << endl;
     cout << "[2] Cadastrar Estrada. " << endl;
-    cout << "[3] Buscar centro Pokemon mais proximo. " << endl;
-    cout << "[4] Cadastrar Pokemon. " << endl;
-    cout << "[5] Remover Pokemon. " << endl;
-    cout << "[6] Listar Pokemons (ordem alfabetica por nome). " << endl;
-    cout << "[7] Listar Pokemons (ordem alfabetica por tipo). " << endl;
-    cout << "[8] Contar Pokemons de cada Tipo. " << endl;
-    cout << "[9] Encontrar Pokemons proximos. " << endl;
+    cout << "[3] Buscar Centro Pokémon mais próximo. " << endl;
+    cout << "[4] Cadastrar Pokémon. " << endl;
+    cout << "[5] Remover Pokémon. " << endl;
+    cout << "[6] Listar Pokémons (ordem alfabética por nome). " << endl;
+    cout << "[7] Listar Pokemons (ordem alfabética por tipo). " << endl;
+    cout << "[8] Contar Pokémons de cada Tipo. " << endl;
+    cout << "[9] Encontrar Pokémons próximos. " << endl;
     cout << "[0] Sair do Programa. " << endl;
     cout << endl;
 
@@ -40,11 +43,30 @@ int menu(){                 //Exibe o menu da pokedex
 }
 
 void onConstruct(){
-    cout << "Funcionalidade em Construcao... " << endl;
+    cout << "Funcionalidade em Construcao... \n" << endl;
 }
 
 int main(){
 
+	setlocale(LC_ALL, "Portuguese_Brazil");  
+	
+    //Imagem pikachu
+    
+    #ifdef _WIN32
+    // Ativa cores ANSI no Windows Terminal
+    system("chcp 65001 > nul");
+    #endif
+
+    // Pikachu #025 - arte colorida do projeto Pokemon Terminal Art
+    const char* comando =
+        "curl -s "
+        "https://raw.githubusercontent.com/shinya/pokemon-terminal-art/main/"
+        "fullcolor/diamond/025.txt";
+
+    system(comando);
+    cout << "\033[0m" << endl;
+
+    //Começo do código
     
     int decisao = -1;
 
@@ -55,7 +77,7 @@ int main(){
             switch (decisao)        //Switch que controla a entrada desejada do usuário.
         {
         case 0:                 //Encerrando o programa
-            cout << "Pokedex desligando... Pika Pika :(" << endl;
+            cout << "\nPokédex desligando... Pika Pika :(\n" << endl;
             return 0;
         case 1:                 //Cadastrar cidade
             onConstruct();      
@@ -86,7 +108,7 @@ int main(){
             break;
     
         default:     
-            cout << "Opcao invalida, Jovem Treinador! " << endl;
+            cout << "Opção inválida, Jovem Treinador! " << endl;
             break;
         }
 
